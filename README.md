@@ -17,3 +17,10 @@ val textFile = sc.textFile("hdfs://README.md")
 val counts = textFile.flatMap(line => line.split(" ")) .map(word => (word, 1)).reduceByKey(_ + _)
 counts.saveAsTextFile("hdfs://out.txt")
 ```
+
+
+```
+val textFile = sc.textFile("hdfs://c7002.dev.com:8020/README.md")
+val counts = textFile.flatMap(line => line.split(" ")) .map(word => (word, 1)).reduceByKey(_ + _)
+println(counts)
+```
