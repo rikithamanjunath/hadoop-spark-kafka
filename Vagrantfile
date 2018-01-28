@@ -72,7 +72,7 @@ Vagrant.configure(2) do |config|
       v.cpus = 2
   end
 
-#  config.vm.provision "shell", inline: "/bin/sh /vagrant/data/kafka-setup.sh"
+  config.vm.provision "shell", inline: "/bin/sh /vagrant/data/kafka-setup.sh"
   config.vm.provision "shell", inline: "/bin/sh /vagrant/data/java-setup.sh"
   config.vm.provision "shell", inline: "/bin/sh /vagrant/data/hadoop-setup.sh"
   config.vm.provision "shell", inline: "/bin/sh /vagrant/data/spark-setup.sh"
