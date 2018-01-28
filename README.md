@@ -8,3 +8,10 @@
 - to resume  'Vagrant resume --no-provision'
 - to destory 'Vagrant destroy'
 
+sudo su
+/usr/local/hadoop-2.7.2/sbin/hadoop-daemon.sh start datanode
+hadoop dfs -put /vagrant/data/../SimpleCounter/README.md /
+/usr/local/spark/bin/spark-shell
+val textFile = sc.textFile("hdfs://README.md")
+val counts = textFile.flatMap(line => line.split(" ")) .map(word => (word, 1)).reduceByKey(_ + _)
+counts.saveAsTextFile("hdfs://out.txt")
