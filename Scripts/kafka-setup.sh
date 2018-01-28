@@ -32,10 +32,10 @@ export KAFKA_PRE=kafka_2.11-
 export KAFKA_VERSION=0.10.1.1
 export ZOO_VERSION=3.4.8
 
-sh zookeeper-$ZOO_VERSION/bin/zkServer.sh start
-nohup sh $KAFKA_PRE$KAFKA_VERSION/bin/kafka-server-start.sh $KAFKA_PRE$KAFKA_VERSION/config/server.properties &
-sleep 5
-sh $KAFKA_PRE$KAFKA_VERSION/bin/kafka-topics.sh --create --zookeeper 192.168.70.102:2181 --replication-factor 1 --partitions 1 --topic test
+#sh zookeeper-$ZOO_VERSION/bin/zkServer.sh start
+#nohup sh $KAFKA_PRE$KAFKA_VERSION/bin/kafka-server-start.sh $KAFKA_PRE$KAFKA_VERSION/config/server.properties &
+#sleep 5
+#sh $KAFKA_PRE$KAFKA_VERSION/bin/kafka-topics.sh --create --zookeeper 192.168.70.102:2181 --replication-factor 1 --partitions 1 --topic test
 
 echo " Java version" >> /vagrant/data/output/kafka-output.txt
 echo "$JAVA_VERSION" >> /vagrant/data/output/kafka-output.txt
