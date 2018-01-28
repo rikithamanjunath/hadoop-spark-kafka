@@ -11,7 +11,7 @@
 ```
 sudo su
 /usr/local/hadoop-2.7.2/sbin/hadoop-daemon.sh start datanode
-hadoop dfs -put /vagrant/data/../SimpleCounter/README.md /
+/usr/local/hadoop/bin/hadoop dfs -put /vagrant/data/../SimpleCounter/README.md /
 /usr/local/spark/bin/spark-shell
 ```
 
