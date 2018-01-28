@@ -1,4 +1,4 @@
-## Shealth - Amwell Setup
+## Testing Setup
 
 - Comes with setup of Kafka, Zookeeper, Redis and Mysql on Centos 6.0 
 - Kafka port 9092, Zookeeper 2181 
