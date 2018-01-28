@@ -13,14 +13,12 @@ sudo su
 /usr/local/hadoop-2.7.2/sbin/hadoop-daemon.sh start datanode
 hadoop dfs -put /vagrant/data/../SimpleCounter/README.md /
 /usr/local/spark/bin/spark-shell
-val textFile = sc.textFile("hdfs://README.md")
-val counts = textFile.flatMap(line => line.split(" ")) .map(word => (word, 1)).reduceByKey(_ + _)
-counts.saveAsTextFile("hdfs://out.txt")
 ```
 
 
 ```
 val textFile = sc.textFile("hdfs://c7002.dev.com:8020/README.md")
 val counts = textFile.flatMap(line => line.split(" ")) .map(word => (word, 1)).reduceByKey(_ + _)
-println(counts)
+counts.saveAsTextFile("hdfs://c7002.dev.com:8020/out.txt")
+hdfs dfs -cat /out.txt/part-00000
 ```
